@@ -14,11 +14,9 @@
 
 /* Glassmorphism Sticky State */
 .header.scrolled {
-    background-color: rgba(247, 247, 255, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: white;
     border-bottom: 1px solid rgba(39, 24, 126, 0.08);
-    box-shadow: 0 4px 30px rgba(39, 24, 126, 0.03);
+    box-shadow: 0 4px 20px rgba(39, 24, 126, 0.05);
 }
 
 .navbar {
@@ -143,26 +141,27 @@
     .hamburger {
         display: flex;
     }
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    min-height: 100vh;
 
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
+    background-color: white;
 
-        background: white;
-        
+    overflow-y: auto;
+    padding-top: 80px;
 
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        gap: 32px;
+    gap: 32px;
 
-        transition: 0.4s ease;
-        z-index: 9999;
-    }
+    transition: 0.4s ease;
+    z-index: 9999;
+}
 
     /* Active Mobile Menu */
     .nav-menu.active {
