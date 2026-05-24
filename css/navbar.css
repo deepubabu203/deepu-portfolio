@@ -135,40 +135,38 @@
 /* ==========================================================================
    MOBILE NAVIGATION
    ========================================================================== */
-
 @media (max-width: 768px) {
 
     .hamburger {
         display: flex;
     }
-.nav-menu {
-    position: fixed;
 
-    top: 0;
-    bottom: 0;
-    left: 100%;
-    right: 0;
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
 
-    background-color: white;
+        width: 100%;
+        height: 100%;
 
-    overflow-y: auto;
+        background-color: white;
 
-    padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+        padding-left: 40px;
 
-    gap: 32px;
+        gap: 32px;
 
-    transition: 0.4s ease;
-    z-index: 9999;
-}
+        transition: right 0.4s ease;
 
-    /* Active Mobile Menu */
+        z-index: 9999;
+    }
+
     .nav-menu.active {
-        left:25%;
+        right: 0;
     }
 
     .nav-link {
