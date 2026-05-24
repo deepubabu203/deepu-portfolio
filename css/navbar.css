@@ -135,46 +135,66 @@
 /* ==========================================================================
    MOBILE NAVIGATION
    ========================================================================== */
-@media (max-width: 768px) {
 
-    .hamburger {
-        display: flex;
+/* Mobile Media Query - Adjust max-width if your breakpoint is different (e.g., 768px) */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Ensure the nav container doesn't overflow */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #ffffff; /* Keeps the main top bar solid on mobile */
     }
 
+    /* 2. Fix the Mobile Sidebar Drawer */
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%;
-
-        width: 100%;
-        height: 100%;
-
-        background-color: white;
-
-        display: flex;
+        right: -100%; /* Completely hides it off-screen to the right */
+        width: 100%;  /* Full screen width on small devices */
+        height: 100vh; /* Full screen height */
+        
+        /* Background & Visibility Overrides */
+        background-color: #ffffff !important; /* Force solid white, removes transparency */
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;     /* Removes any lingering blur/glassmorphism */
+        
+        /* Flexbox Alignment for Menu Items */
+        display: flex !important;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-
-        padding-left: 40px;
-
-        gap: 32px;
-
-        transition: right 0.4s ease;
-
-        z-index: 9999;
+        align-items: center;
+        gap: 2.5rem; /* Even spacing between items */
+        
+        /* Smooth Slide-In Transition */
+        transition: right 0.4s ease-in-out;
+        z-index: 999; /* Just below the close toggle button if needed, or equal */
     }
 
+    /* 3. When JavaScript toggles the 'active' class, slide it in */
     .nav-menu.active {
-        right: 0;
+        right: 0; /* Brings it into view */
     }
 
-    .nav-link {
-        font-size: 1.2rem;
-        color: var(--accent-primary);
+    /* 4. Fix Nav Links positioning inside the column */
+    .nav-item {
+        width: 100%;
+        text-align: center;
     }
 
-    .nav-action {
-        display: none;
+    .nav-links {
+        display: inline-block;
+        font-size: 1.5rem; /* Larger, tappable font sizes for mobile */
+        width: 100%;
+        padding: 10px 0;
+        color: #1a0066; /* Matching your theme's deep purple/blue */
+    }
+
+    /* 5. Handle Body Scroll Prevention (Optional but highly recommended) */
+    body.menu-open {
+        overflow: hidden; /* Prevents background content from scrolling behind the menu */
     }
 }

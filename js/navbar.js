@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('open');
-            navMenu.classList.toggle('open');
+            navMenu.classList.toggle('active');
         });
     }
     
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             if (hamburger && navMenu) {
                 hamburger.classList.remove('open');
-                navMenu.classList.remove('open');
+                navMenu.classList.remove('active');
             }
         });
     });
