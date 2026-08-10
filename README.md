@@ -66,7 +66,15 @@ Deepu, to link your live email transmission with Web3Forms, follow these simple 
 4. Uncomment the fetch structure and swap `"YOUR_WEB3FORMS_ACCESS_KEY_HERE"` with your actual key.
 5. Remove the mock `setTimeout` simulation logic underneath, and save!
 
----
+## Current Learning
+- Python
+- Data Structures & Algorithms
+- Machine Learning
+- Data Analysis
+- Power BI
+- machine learnng
+- deep learning
+- NLP
 
 ## 💻 Local Execution
 
